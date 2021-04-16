@@ -1,0 +1,4 @@
+include ':lib'
+include ':app'
+includeBuild("./plugin")
+rootProject.name = "Linkester"

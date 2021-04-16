@@ -1,0 +1,53 @@
+plugins {
+    id("com.android.library")
+    id("kotlin-android")
+    id("maven-publish")
+}
+publishing {
+    publications {
+        bar(MavenPublication) {
+            groupId = "com.melegy.linkester"
+            artifactId = "lib"
+            version = "0.0.1"
+        }
+    }
+}
+
+android {
+    compileSdkVersion(30)
+    buildToolsVersion("30.0.3")
+
+    defaultConfig {
+        minSdkVersion(16)
+        targetSdkVersion(30)
+        versionCode(1)
+        versionName("0.0.1")
+
+        testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    buildFeatures {
+        // Disable unused AGP features
+        buildConfig = false
+        aidl = false
+        renderScript = false
+        resValues = false
+        shaders = false
+    }
+
+    resourcePrefix = "linkester_"
+
+}
+
+dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.32")
+}

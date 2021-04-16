@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="linkester_enter_link_manually">Enter a URL and test how the app handles it</string>
+    <string name="linkester_link_hint">https://myapp.com/main</string>
+    <string name="linkester_try_button_text">Try it out!</string>
+    <string name="linkester_auto_collected_links_text">Auto Collected</string>
+    <string name="linkester_manually_added_links_text">Manually Added</string>
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/linkester_enter_link_manually"
+        android:textColor="@color/linkester_white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/linkester_link_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/linkester_edit_text_background"
+        android:hint="@string/linkester_link_hint"
+        android:importantForAutofill="no"
+        android:inputType="textUri"
+        android:textColor="@color/linkester_black"
+        android:textColorHint="@color/linkester_grey" />
+
+    <Button
+        android:id="@+id/linkester_try_link_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/linkester_button_unselected_style"
+        android:text="@string/linkester_try_button_text"
+        android:textAllCaps="false"
+        android:textColor="@color/linkester_white" />
+
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="16dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/linkester_auto_collected_links_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/linkester_button_style"
+            android:text="@string/linkester_auto_collected_links_text"
+            android:textAllCaps="false"
+            android:textColor="@drawable/linkester_button_text_color" />
+
+        <Button
+            android:id="@+id/linkester_manually_collected_links_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/linkester_button_style"
+            android:text="@string/linkester_manually_added_links_text"
+            android:textAllCaps="false"
+            android:textColor="@drawable/linkester_button_text_color"
+            tools:background="@drawable/linkester_button_selected_style"
+            tools:textColor="@color/linkester_pizazz" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/linkester_links_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

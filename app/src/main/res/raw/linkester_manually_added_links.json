@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Home",
+    "link": "https://app.melegy.com/home"
+  },
+  {
+    "title": "Item details",
+    "link": "https://app.melegy.com/list?id=12"
+  },
+  {
+    "title": "Invalid App link",
+    "link": "https://app.melegy.com/invalid"
+  },
+  {
+    "title": "Settings",
+    "link": "melegy://settings"
+  },
+  {
+    "title": "Category",
+    "link": "melegy://category?id=3"
+  },
+  {
+    "title": "Invalid Deep link",
+    "link": "melegy://invalid"
+  }
+]
