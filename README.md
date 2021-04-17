@@ -1,4 +1,5 @@
 
+
 # Linkester
 
 Linkester is an Android library that aims to help Android developers test their deep links implementation.
@@ -53,3 +54,6 @@ Example:
 	]
 	```
   
+## Credits:
+- [Quadrant](https://github.com/gaelmarhic/Quadrant) gardle plugin.
+- [Deep links at Scale on iOS](https://medium.com/@albertodebo/deep-linking-at-scale-on-ios-1dd8789c389f)
