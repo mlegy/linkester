@@ -1,4 +1,4 @@
 include ':lib'
-include ':app'
+include ':sample'
 includeBuild("./plugin")
 rootProject.name = "Linkester"
