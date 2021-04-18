@@ -4,17 +4,16 @@ Linkester is an Android library that aims to help Android developers test their 
 
 The idea is to have a new launcher activity for your App (in debug builds) that will list all deep/app links available in your App and with a c lick on any of them you should be able to test it.
 
-# Features:
+## Features
 - Auto colelct all deep/app links.
 - Manually add some deep links.
 - Write any deep link and click on "try it out" button to see how your App will react.
 - Long press on a deep link will auto fill it in the edit text box so that you can edit or add query params to the deep link before testing it.
 
-# Demo
+## Demo
 <img src="https://github.com/mlegy/Linkester/blob/main/linkester_demo.gif" width="35%">
 
-# How to integrate?
-
+## Getting started
 1. To use Linkester, add the Linkester dependency to your app’s build.gradle file:
 	<details>
 	<summary>Groovy</summary>
@@ -36,84 +35,84 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 	}
 	```
 	</details>
-3. There is 2 ways to list the deep links from your App into Linkester:
+2. There is 2 ways to list the deep links from your App into Linkester:
 
-- Automatically collect all deep links from the App.
-To be able to let Linkester gather all your deep/app links automatically we only need to apply Linkester Gradle plugin into your project.
+	1. Automatically collect all deep links from the App.
+	To be able to let Linkester gather all your deep/app links automatically we only need to apply Linkester Gradle plugin into your project.
 
-	Build script snippet for use in all Gradle versions:
-	<details>
-	<summary>Groovy</summary>
+		#### Build script snippet for use in all Gradle versions:
+		<details>
+		<summary>Groovy</summary>
 
-	```groovy
-	buildscript {
-	  repositories {
-	    maven {
-	      url "https://plugins.gradle.org/m2/"
-	    }
-	  }
-	  dependencies {
-	    classpath "gradle.plugin.com.mlegy.linkseter:plugin:<current_version>"
-	  }
-	}
+		```groovy
+		buildscript {
+		  repositories {
+		    maven {
+		      url "https://plugins.gradle.org/m2/"
+		    }
+		  }
+		  dependencies {
+		    classpath "gradle.plugin.com.mlegy.linkseter:plugin:<current_version>"
+		  }
+		}
 
-	repositories {
-	  mavenCentral()
-	}
+		repositories {
+		  mavenCentral()
+		}
 
-	apply plugin: "com.mlegy.linkseter"
-	```
-	</details>
-	<details open>
-	<summary>Kotlin</summary>
+		apply plugin: "com.mlegy.linkseter"
+		```
+		</details>
+		<details open>
+		<summary>Kotlin</summary>
 
-	```kotlin
-	buildscript {
-	  repositories {
-	    maven("https://plugins.gradle.org/m2/")
-	  }
-	  dependencies {
-	    classpath("gradle.plugin.com.mlegy.linkseter:plugin:<current_version>")
-	  }
-	}
+		```kotlin
+		buildscript {
+		  repositories {
+		    maven("https://plugins.gradle.org/m2/")
+		  }
+		  dependencies {
+		    classpath("gradle.plugin.com.mlegy.linkseter:plugin:<current_version>")
+		  }
+		}
 
-	repositories {
-	  mavenCentral()
-	}
+		repositories {
+		  mavenCentral()
+		}
 
-	apply(plugin = "com.mlegy.linkseter")
-	```
-	</details>
+		apply(plugin = "com.mlegy.linkseter")
+		```
+		</details>
 
-	#### Using new plugin API
+		#### Using new plugin API
 
-	Build script snippet for new, incubating, plugin mechanism introduced in Gradle 2.1:
-	```groovy
-	plugins {
-	  id "com.mlegy.linkseter" version "<current_version>"
-	}
+		Build script snippet for new, incubating, plugin mechanism introduced in Gradle 2.1:
+		```groovy
+		plugins {
+		  id "com.mlegy.linkseter" version "<current_version>"
+		}
 
-	repositories {
-	  mavenCentral()
-	}
-	```
-- Manually add your most common used deep links yourself.
-The second option you can use is to provide a json file with most common deep links in your app.
-You can do that by creating a raw json file in `res/values` the file must be named `linkester_manually_added_links.json`
-It should be a list of deep links where each link is an object of `title` and `link` fields
-Example:
-	```json
-	[  
-	  {  
-	    "title": "Home",  
-	    "link": "https://app.melegy.com/home"  
-	  },  
-	  {  
-	    "title": "Item details",  
-	    "link": "https://app.melegy.com/list?id=12"  
-	  }
-	]
-	```
+		repositories {
+		  mavenCentral()
+		}
+		```
+	2. Manually add your most common used deep links yourself.
+	The second option you can use is to provide a json file with most common deep links in your app.
+	You can do that by creating a raw json file in `res/values` the file must be named `linkester_manually_added_links.json`
+	It should be a list of deep links where each link is an object of `title` and `link` fields
+	Example:
+		```json
+		[  
+		  {  
+		    "title": "Home",  
+		    "link": "https://app.melegy.com/home"  
+		  },  
+		  {  
+		    "title": "Item details",  
+		    "link": "https://app.melegy.com/list?id=12"  
+		  }
+		]
+		```
   
 ## Credits:
 - [Quadrant](https://github.com/gaelmarhic/Quadrant)
