@@ -13,7 +13,8 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 ## Demo
 <img src="https://github.com/mlegy/Linkester/blob/main/linkester_demo.gif" width="35%">
 
-## Getting started
+## Getting started - [NOT PUBLISHED YET]
+
 1. To use Linkester, add the Linkester dependency to your app’s build.gradle file:
 	<details>
 	<summary>Groovy</summary>
