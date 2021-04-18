@@ -35,8 +35,9 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 	  debugImplementation("com.mlegy.linkester:lib:<current_version>")
 	}
 	```
+	</details>
+3. There is 2 ways to list the deep links from your App into Linkester:
 
-There is 2 ways to list the deep links from your App into Linkester:
 - Automatically collect all deep links from the App.
 To be able to let Linkester gather all your deep/app links automatically we only need to apply Linkester Gradle plugin into your project.
 
