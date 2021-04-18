@@ -32,7 +32,7 @@ pluginBundle {
 
 gradlePlugin {
     plugins {
-        create("linkester") {
+        register("linkester") {
             id = "com.mlegy.linkester"
             displayName = "Linkester Gradle Plugin"
             description = "A plugin for linkester library to collect all deep links automatically."
