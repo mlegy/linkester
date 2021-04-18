@@ -1,5 +1,3 @@
-
-
 # Linkester
 
 Linkester is an Android library that aims to help Android developers test their deep links implementation.
@@ -16,24 +14,86 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 <img src="https://github.com/mlegy/Linkester/blob/main/linkester_demo.gif" width="35%">
 
 # How to integrate?
+
+1. To use Linkester, add the Linkester dependency to your app’s build.gradle file:
+	<details>
+	<summary>Groovy</summary>
+
+	```groovy
+	dependencies {
+	  // debugImplementation because Linkester should only run in debug builds.
+	  debugImplementation 'com.mlegy.linkester:lib:<current_version>'
+	}
+	```
+	</details>
+	<details open>
+	<summary>Kotlin</summary>
+
+	```kotlin
+	dependencies {
+	  // debugImplementation because Linkester should only run in debug builds.
+	  debugImplementation("com.mlegy.linkester:lib:<current_version>")
+	}
+	```
+
 There is 2 ways to list the deep links from your App into Linkester:
 - Automatically collect all deep links from the App.
 To be able to let Linkester gather all your deep/app links automatically we only need to apply Linkester Gradle plugin into your project.
+
+	Build script snippet for use in all Gradle versions:
+	<details>
+	<summary>Groovy</summary>
+
+	```groovy
+	buildscript {
+	  repositories {
+	    maven {
+	      url "https://plugins.gradle.org/m2/"
+	    }
+	  }
+	  dependencies {
+	    classpath "gradle.plugin.com.mlegy.linkseter:plugin:<current_version>"
+	  }
+	}
+
+	repositories {
+	  mavenCentral()
+	}
+
+	apply plugin: "com.mlegy.linkseter"
+	```
+	</details>
+	<details open>
+	<summary>Kotlin</summary>
+
 	```kotlin
 	buildscript {
-	    repositories {
-	        maven { url "https://plugins.gradle.org/m2/" }
-	    }
-	    dependencies {
-	        classpath "gradle.plugin.com.melegy.linkseter:linkester:$version"
-	    }
+	  repositories {
+	    maven("https://plugins.gradle.org/m2/")
+	  }
+	  dependencies {
+	    classpath("gradle.plugin.com.mlegy.linkseter:plugin:<current_version>")
+	  }
 	}
+
+	repositories {
+	  mavenCentral()
+	}
+
+	apply(plugin = "com.mlegy.linkseter")
 	```
-	And then apply it into your Android module
-	```kotlin
-	plugins {  
-	  ..
-	  id 'com.melegy.linkester'  
+	</details>
+
+	#### Using new plugin API
+
+	Build script snippet for new, incubating, plugin mechanism introduced in Gradle 2.1:
+	```groovy
+	plugins {
+	  id "com.mlegy.linkseter" version "<current_version>"
+	}
+
+	repositories {
+	  mavenCentral()
 	}
 	```
 - Manually add your most common used deep links yourself.
