@@ -7,7 +7,7 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/plugin" name="plugin">
+              <build path="$PROJECT_DIR$/plugin" name="linkester-plugin">
                 <projects>
                   <project path="$PROJECT_DIR$/plugin" />
                 </projects>
