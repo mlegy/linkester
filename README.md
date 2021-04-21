@@ -13,7 +13,7 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 ## Demo
 <img src="https://github.com/mlegy/Linkester/blob/main/linkester_demo.gif" width="35%">
 
-## Getting started - [NOT PUBLISHED YET]
+## Getting started
 
 1. To use Linkester, add the Linkester dependency to your app’s build.gradle file:
 	<details>
