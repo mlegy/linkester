@@ -22,7 +22,7 @@ internal class DeepLinksTestActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.linkester_activity_deep_links_test)
         actionBar?.title =
-            "${packageManager.getApplicationLabel(applicationInfo)} deep links tester"
+            "${packageManager.getApplicationLabel(applicationInfo)} linkester"
         val links = LinksParser(this)
         val linksList = mutableListOf(*links.manuallyAdded.toTypedArray())
 
