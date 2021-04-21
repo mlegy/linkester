@@ -22,7 +22,7 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 	```groovy
 	dependencies {
 	  // debugImplementation because Linkester should only run in debug builds.
-	  debugImplementation 'com.mlegy.linkester:linkester:<current_version>'
+	  debugImplementation 'com.mlegy.linkester:linkester:0.0.1'
 	}
 	```
 	</details>
@@ -32,7 +32,7 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 	```kotlin
 	dependencies {
 	  // debugImplementation because Linkester should only run in debug builds.
-	  debugImplementation("com.mlegy.linkester:linkester:<current_version>")
+	  debugImplementation("com.mlegy.linkester:linkester:0.0.1")
 	}
 	```
 	</details>
