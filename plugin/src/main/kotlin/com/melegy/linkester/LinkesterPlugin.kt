@@ -28,7 +28,7 @@ internal class LinkesterPlugin : Plugin<Project> {
 
     private val Project.extension: BaseExtension
         get() {
-            val android = project.extensions.findByType(BaseExtension::class.java)
+            val android = project.extensions.findByType(com.android.build.gradle.BaseExtension::class.java)
             if (android != null) return android
             else throw GradleException("Project $name is not an Android project")
         }

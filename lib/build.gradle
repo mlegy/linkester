@@ -3,15 +3,13 @@ plugins {
     id("kotlin-android")
     id("maven-publish")
 }
-publishing {
-    publications {
-        bar(MavenPublication) {
-            groupId = "com.mlegy.linkester"
-            artifactId = "lib"
-            version = "0.0.1"
-        }
-    }
+ext {
+    PUBLISH_GROUP_ID = 'com.mlegy.linkester'
+    PUBLISH_VERSION = '0.0.1'
+    PUBLISH_ARTIFACT_ID = 'linkester'
 }
+
+apply from: "${rootProject.projectDir}/lib/scripts/publish-mavencentral.gradle"
 
 android {
     compileSdkVersion(30)

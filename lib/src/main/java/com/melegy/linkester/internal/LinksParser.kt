@@ -15,18 +15,21 @@ internal object LinksParser {
 
     private fun parseResourceFile(context: Context, fileName: String): List<Link> {
         val resId = context.resources.getIdentifier(fileName, "raw", context.packageName)
+        if (resId != 0) {
+            val rawString = context.resources.openRawResource(resId)
+                .bufferedReader().use { it.readText() }
 
-        val rawString = context.resources.openRawResource(resId)
-            .bufferedReader().use { it.readText() }
+            val rawArray = JSONArray(rawString)
+            val parsedLinks = mutableListOf<Link>()
 
-        val rawArray = JSONArray(rawString)
-        val parsedLinks = mutableListOf<Link>()
-
-        for (i in 0 until rawArray.length()) {
-            val title = rawArray.getJSONObject(i).getString("title")
-            val link = rawArray.getJSONObject(i).getString("link")
-            parsedLinks.add(Link(title, link))
+            for (i in 0 until rawArray.length()) {
+                val title = rawArray.getJSONObject(i).getString("title")
+                val link = rawArray.getJSONObject(i).getString("link")
+                parsedLinks.add(Link(title, link))
+            }
+            return parsedLinks
+        } else {
+            return emptyList()
         }
-        return parsedLinks
     }
 }

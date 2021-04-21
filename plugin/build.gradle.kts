@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
     implementation(gradleApi())
-    implementation("com.android.tools.build:gradle:4.1.0")
+    implementation("com.android.tools.build:gradle:4.1.3")
 }
 
 java {
@@ -21,7 +21,7 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-group = "com.mlegy"
+group = "com.mlegy.linkester"
 version = "0.0.1"
 
 pluginBundle {

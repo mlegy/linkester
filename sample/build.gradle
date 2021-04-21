@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'com.mlegy.linkester'
+    id "com.mlegy.linkester"
 }
 
 android {
@@ -43,5 +43,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation(project(":lib"))
+    debugImplementation("com.mlegy.linkester:linkester:0.0.1")
 }
