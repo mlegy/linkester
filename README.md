@@ -22,7 +22,7 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 	```groovy
 	dependencies {
 	  // debugImplementation because Linkester should only run in debug builds.
-	  debugImplementation 'com.mlegy.linkester:lib:<current_version>'
+	  debugImplementation 'com.mlegy.linkester:linkester:<current_version>'
 	}
 	```
 	</details>
@@ -32,7 +32,7 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 	```kotlin
 	dependencies {
 	  // debugImplementation because Linkester should only run in debug builds.
-	  debugImplementation("com.mlegy.linkester:lib:<current_version>")
+	  debugImplementation("com.mlegy.linkester:linkester:<current_version>")
 	}
 	```
 	</details>
@@ -53,15 +53,11 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 		    }
 		  }
 		  dependencies {
-		    classpath "gradle.plugin.com.mlegy.linkseter:plugin:<current_version>"
+		    classpath "com.mlegy.linkester:gradle-plugin:0.0.1"
 		  }
 		}
 
-		repositories {
-		  mavenCentral()
-		}
-
-		apply plugin: "com.mlegy.linkseter"
+		apply plugin: "com.mlegy.linkester"
 		```
 		</details>
 		<details open>
@@ -70,33 +66,19 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 		```kotlin
 		buildscript {
 		  repositories {
-		    maven("https://plugins.gradle.org/m2/")
+		    maven {
+		      url = uri("https://plugins.gradle.org/m2/")
+		    }
 		  }
 		  dependencies {
-		    classpath("gradle.plugin.com.mlegy.linkseter:plugin:<current_version>")
+		    classpath("com.mlegy.linkester:gradle-plugin:0.0.1")
 		  }
 		}
 
-		repositories {
-		  mavenCentral()
-		}
-
-		apply(plugin = "com.mlegy.linkseter")
+		apply(plugin = "com.mlegy.linkester")
 		```
 		</details>
 
-		#### Using new plugin API
-
-		Build script snippet for new, incubating, plugin mechanism introduced in Gradle 2.1:
-		```groovy
-		plugins {
-		  id "com.mlegy.linkseter" version "<current_version>"
-		}
-
-		repositories {
-		  mavenCentral()
-		}
-		```
 	2. Manually add your most common used deep links yourself.
 	The second option you can use is to provide a json file with most common deep links in your app.
 	You can do that by creating a raw json file in `res/values` the file must be named `linkester_manually_added_links.json`
