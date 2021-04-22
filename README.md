@@ -2,7 +2,7 @@
 
 Linkester is an Android library that aims to help Android developers test their deep links implementation.
 
-The idea is to have a new launcher activity for your App (in debug builds) that will list all deep/app links available in your App and with a c lick on any of them you should be able to test it.
+The idea is to have a new launcher activity for your App (in debug builds) that will list all deep/app links available in your App and with a click on any of them you should be able to test it.
 
 ## Features
 - Auto colelct all deep/app links.
