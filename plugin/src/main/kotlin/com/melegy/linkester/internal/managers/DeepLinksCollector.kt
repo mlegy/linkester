@@ -22,6 +22,11 @@ internal object DeepLinksCollector {
     private val String.activityName
         get() = split('.').last()
 
-    private val IntentFilterData.deepLink
-        get() = "$scheme://$host$pathPrefix"
+    private val IntentFilterData.deepLink: String
+        get() = when {
+            path.isNotBlank() -> "$scheme://$host$path"
+            pathPrefix.isNotBlank() -> "$scheme://$host$pathPrefix"
+            pathPattern.isNotBlank() -> "$scheme://$host$pathPattern"
+            else -> "$scheme://$host"
+        }
 }

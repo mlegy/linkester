@@ -9,7 +9,9 @@ internal object XMLParsingConstants {
     const val DATA_TAG = "data"
     const val SCHEME_TAG = "scheme"
     const val HOST_TAG = "host"
+    const val PATH_TAG = "path"
     const val PATH_PREFIX_TAG = "pathPrefix"
+    const val PATH_PATTERN_TAG = "pathPattern"
 
     const val ANDROID_NAMESPACE = "http://schemas.android.com/apk/res/android"
 }

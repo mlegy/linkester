@@ -1,8 +1,8 @@
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
 
-group = "com.mlegy"
-version = "0.0.1"
+group = "com.mlegy.linkester"
+version = "0.0.2"
 
 File secretPropsFile = project.rootProject.file('local.properties')
 if (secretPropsFile.exists()) {
