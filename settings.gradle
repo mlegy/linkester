@@ -1,3 +1,5 @@
+include ':sample:app'
+include ':sample:feature'
 include ':lib'
 include ':sample'
 includeBuild("./plugin")

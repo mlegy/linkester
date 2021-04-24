@@ -1,10 +1,11 @@
 package com.melegy.linkester
 
+import com.google.common.base.Charsets
+import com.google.common.io.Files
 import com.melegy.linkester.internal.DeepLinksCollectorProcessor
-import com.melegy.linkester.internal.constants.PluginConstants.PLUGIN_NAME
-import com.melegy.linkester.internal.constants.PluginConstants.TARGET_DIRECTORY
 import com.melegy.linkester.internal.models.modules.RawModule
 import org.gradle.api.DefaultTask
+import org.gradle.api.GradleException
 import org.gradle.api.Project
 import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.InputFiles
@@ -23,18 +24,23 @@ internal open class LinkesterDeepLinksCollectorTask : DefaultTask() {
     val manifestFiles = rawModules.flatMap { it.manifestFiles }
 
     @OutputDirectory
-    val targetDirectory = project.buildDir.resolve(TARGET_DIRECTORY)
+    lateinit var intermediateDir: File
 
     init {
-        group = PLUGIN_NAME
-        description = DESCRIPTION
+        group = "Linkester"
+        description = "Collect all deep links in the App to be used in the Linkester library"
     }
 
     @TaskAction
     fun collectAllDeepLinks() {
-        DeepLinksCollectorProcessor(targetDirectory).run {
-            process(rawModules)
+        val links = DeepLinksCollectorProcessor(rawModules)
+        val rawDirectory = File(intermediateDir, "raw")
+        if (!rawDirectory.exists() && !rawDirectory.mkdirs()) {
+            throw GradleException("Failed to create folder: $rawDirectory")
         }
+
+        val jsonFile = File(rawDirectory, "linkester_auto_collected_links.json")
+        Files.asCharSink(jsonFile, Charsets.UTF_8).write(links)
     }
 
     private fun retrieveRawModules() = project.rootProject.allprojects.map { it.toRawModule() }
@@ -44,14 +50,7 @@ internal open class LinkesterDeepLinksCollectorTask : DefaultTask() {
     private val Project.manifestFiles
         get() = projectDir
             .walk()
-            .maxDepth(MANIFEST_FILE_DEPTH)
-            .filter { it.name == MANIFEST_FILE_NAME }
+            .maxDepth(3)
+            .filter { it.name == "AndroidManifest.xml" }
             .toList()
-
-    private companion object {
-        private const val MANIFEST_FILE_DEPTH = 3
-        private const val MANIFEST_FILE_NAME = "AndroidManifest.xml"
-        private const val DESCRIPTION =
-            "Collect all deep links in the App to be used in the Linkester library."
-    }
 }

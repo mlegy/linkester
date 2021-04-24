@@ -1,4 +1,4 @@
-package com.melegy.linkester
+package com.melegy.app
 
 import org.junit.Test
 

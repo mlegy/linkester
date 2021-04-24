@@ -25,6 +25,8 @@
             <option value="$PROJECT_DIR$/lib" />
             <option value="$PROJECT_DIR$/plugin" />
             <option value="$PROJECT_DIR$/sample" />
+            <option value="$PROJECT_DIR$/sample/app" />
+            <option value="$PROJECT_DIR$/sample/feature" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

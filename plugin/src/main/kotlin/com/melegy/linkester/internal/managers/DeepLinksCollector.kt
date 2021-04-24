@@ -26,7 +26,6 @@ internal object DeepLinksCollector {
         get() = when {
             path.isNotBlank() -> "$scheme://$host$path"
             pathPrefix.isNotBlank() -> "$scheme://$host$pathPrefix"
-            pathPattern.isNotBlank() -> "$scheme://$host$pathPattern"
             else -> "$scheme://$host"
         }
 }
