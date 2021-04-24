@@ -5,7 +5,7 @@ plugins {
 }
 ext {
     PUBLISH_GROUP_ID = 'com.mlegy.linkester'
-    PUBLISH_VERSION = '0.0.2'
+    PUBLISH_VERSION = '0.0.3'
     PUBLISH_ARTIFACT_ID = 'linkester'
 }
 
