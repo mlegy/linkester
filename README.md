@@ -4,7 +4,11 @@
 
 Linkester is an Android library that aims to help Android developers test their deep links implementation.
 
-The idea is to have a new launcher activity for your App (in debug builds) that will list all deep/app links available in your App and with a click on any of them you should be able to test it.
+The idea is to have a new launcher activity for your App (in debug builds) that will list all deep/app links available in your App and with a click on any of them you can test it.
+
+The gradle plugin will collect all deep/app links registered for your App and will list them automatically.
+
+You still also have the option to list some links manually (most used for example or some links with predefined query params)
 
 ## Features
 - Auto colelct all deep/app links.
@@ -39,6 +43,8 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 	```
 	</details>
 2. There is 2 ways to list the deep links from your App into Linkester:
+
+	> Please note that the gradle plugin will try to find all deep links in all modules in your App, so applying it only one module (app module) is enough to collect all deep links from other feature modules too.
 
 	1. Automatically collect all deep links from the App.
 	To be able to let Linkester gather all your deep/app links automatically we only need to apply Linkester Gradle plugin into your project.
@@ -99,9 +105,11 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 		]
 		```
   
-## Credits:
+## Credits
 - [Quadrant](https://github.com/gaelmarhic/Quadrant)
 - [Deep links at Scale on iOS](https://medium.com/@albertodebo/deep-linking-at-scale-on-ios-1dd8789c389f)
+
+🙏 If you like Linkester you can show support by starring ⭐ and/or sponsoring 💟 this repository.
 
 ## License
 
