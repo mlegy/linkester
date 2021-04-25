@@ -22,7 +22,7 @@ java {
 }
 
 group = "com.mlegy.linkester"
-version = "0.0.4"
+version = "0.0.5"
 
 pluginBundle {
     website = "https://github.com/mlegy/linkester"
