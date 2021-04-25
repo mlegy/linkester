@@ -84,9 +84,9 @@ You still also have the option to list some links manually (most used for exampl
 		```
 		</details>
 
-	> Please note that the gradle plugin will try to find all deep links in all modules in your App, so applying it only one module (app module) is enough to collect all deep links from other feature modules too.
+	> Please note that the gradle plugin will try to find all deep links in all modules in your App, so applying it in only one module (app module) is enough to collect all deep links from other feature modules too.
 	
-	> Please also note the auto generated file is only generated for debuggable build variants, so if you use the lib in non-debuggable build veriants (which you shouldn't) no auto collected deep links will be there in the library activity.
+	> Please also note the auto generated file is only generated for debuggable build variants, so if you use the lib in non-debuggable build variants (which you shouldn't) no auto collected deep links will be there in the library activity.
 
 	2. Manually add your most common used deep links yourself.
 	The second option you can use is to provide a json file with most common deep links in your app.
