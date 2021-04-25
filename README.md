@@ -45,6 +45,8 @@ You still also have the option to list some links manually (most used for exampl
 2. There is 2 ways to list the deep links from your App into Linkester:
 
 	> Please note that the gradle plugin will try to find all deep links in all modules in your App, so applying it only one module (app module) is enough to collect all deep links from other feature modules too.
+	
+	> Please also note the auto generated file is only generated for debuggable build variants, so if you use the lib in non-debuggable build veriants (which you shouldn't) no auto collected deep links will be there in the library activity.
 
 	1. Automatically collect all deep links from the App.
 	To be able to let Linkester gather all your deep/app links automatically we only need to apply Linkester Gradle plugin into your project.
