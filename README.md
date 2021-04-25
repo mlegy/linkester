@@ -1,5 +1,7 @@
 # Linkester
 
+[![Maven Central][mavenbadge-svg]][mavencentral]
+
 Linkester is an Android library that aims to help Android developers test their deep links implementation.
 
 The idea is to have a new launcher activity for your App (in debug builds) that will list all deep/app links available in your App and with a click on any of them you should be able to test it.
@@ -22,7 +24,7 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 	```groovy
 	dependencies {
 	  // debugImplementation because Linkester should only run in debug builds.
-	  debugImplementation 'com.mlegy.linkester:linkester:0.0.3'
+	  debugImplementation 'com.mlegy.linkester:linkester:<current-version>'
 	}
 	```
 	</details>
@@ -32,7 +34,7 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 	```kotlin
 	dependencies {
 	  // debugImplementation because Linkester should only run in debug builds.
-	  debugImplementation("com.mlegy.linkester:linkester:0.0.3")
+	  debugImplementation("com.mlegy.linkester:linkester:<current-version>")
 	}
 	```
 	</details>
@@ -53,7 +55,7 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 		    }
 		  }
 		  dependencies {
-		    classpath "com.mlegy.linkester:gradle-plugin:0.0.3"
+		    classpath "com.mlegy.linkester:gradle-plugin:<current-version>"
 		  }
 		}
 
@@ -71,7 +73,7 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
 		    }
 		  }
 		  dependencies {
-		    classpath("com.mlegy.linkester:gradle-plugin:0.0.3")
+		    classpath("com.mlegy.linkester:gradle-plugin:<current-version>")
 		  }
 		}
 
@@ -116,3 +118,6 @@ The idea is to have a new launcher activity for your App (in debug builds) that 
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+[mavenbadge-svg]: https://maven-badges.herokuapp.com/maven-central/com.mlegy.linkester/linkester/badge.svg
+[mavencentral]: https://search.maven.org/artifact/com.mlegy.linkester/linkester
