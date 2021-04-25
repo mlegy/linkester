@@ -28,7 +28,7 @@ You still also have the option to list some links manually (most used for exampl
 	```groovy
 	dependencies {
 	  // debugImplementation because Linkester should only run in debug builds.
-	  debugImplementation 'com.mlegy.linkester:linkester:<current-version>'
+	  debugImplementation 'com.mlegy.linkester:linkester:0.0.5'
 	}
 	```
 	</details>
@@ -38,16 +38,11 @@ You still also have the option to list some links manually (most used for exampl
 	```kotlin
 	dependencies {
 	  // debugImplementation because Linkester should only run in debug builds.
-	  debugImplementation("com.mlegy.linkester:linkester:<current-version>")
+	  debugImplementation("com.mlegy.linkester:linkester:0.0.5")
 	}
 	```
 	</details>
 2. There is 2 ways to list the deep links from your App into Linkester:
-
-	> Please note that the gradle plugin will try to find all deep links in all modules in your App, so applying it only one module (app module) is enough to collect all deep links from other feature modules too.
-	
-	> Please also note the auto generated file is only generated for debuggable build variants, so if you use the lib in non-debuggable build veriants (which you shouldn't) no auto collected deep links will be there in the library activity.
-
 	1. Automatically collect all deep links from the App.
 	To be able to let Linkester gather all your deep/app links automatically we only need to apply Linkester Gradle plugin into your project.
 
@@ -63,7 +58,7 @@ You still also have the option to list some links manually (most used for exampl
 		    }
 		  }
 		  dependencies {
-		    classpath "com.mlegy.linkester:gradle-plugin:<current-version>"
+		    classpath "com.mlegy.linkester:gradle-plugin:0.0.5"
 		  }
 		}
 
@@ -81,13 +76,17 @@ You still also have the option to list some links manually (most used for exampl
 		    }
 		  }
 		  dependencies {
-		    classpath("com.mlegy.linkester:gradle-plugin:<current-version>")
+		    classpath("com.mlegy.linkester:gradle-plugin:0.0.5")
 		  }
 		}
 
 		apply(plugin = "com.mlegy.linkester")
 		```
 		</details>
+
+	> Please note that the gradle plugin will try to find all deep links in all modules in your App, so applying it only one module (app module) is enough to collect all deep links from other feature modules too.
+	
+	> Please also note the auto generated file is only generated for debuggable build variants, so if you use the lib in non-debuggable build veriants (which you shouldn't) no auto collected deep links will be there in the library activity.
 
 	2. Manually add your most common used deep links yourself.
 	The second option you can use is to provide a json file with most common deep links in your app.
@@ -110,7 +109,7 @@ You still also have the option to list some links manually (most used for exampl
 ## Credits
 - [Quadrant](https://github.com/gaelmarhic/Quadrant)
 - [Deep links at Scale on iOS](https://medium.com/@albertodebo/deep-linking-at-scale-on-ios-1dd8789c389f)
-
+---
 🙏 If you like Linkester you can show support by starring ⭐ and/or sponsoring 💟 this repository.
 
 ## License
