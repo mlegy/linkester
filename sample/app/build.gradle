@@ -44,5 +44,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation(project(":sample:feature"))
-    debugImplementation("com.mlegy.linkester:linkester:0.0.3")
+    debugImplementation("com.mlegy.linkester:linkester:0.0.4")
 }
