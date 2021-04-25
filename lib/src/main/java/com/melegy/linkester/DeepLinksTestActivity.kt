@@ -74,7 +74,9 @@ internal class DeepLinksTestActivity : Activity() {
             updateListUpdater(links.manuallyAdded)
         }
 
-        manuallyCollectedLinksButton.isSelected = true
+        if (links.manuallyAdded.isNotEmpty()) manuallyCollectedLinksButton.isSelected = true
+        else autoCollectedLinksButton.isSelected = true
+
         tryLinkButton.setOnClickListener { triggerDeepLink(linkEditText.text.toString()) }
     }
 }
